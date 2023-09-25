@@ -1,14 +1,20 @@
-const express = require('express')
-//import http from 'http'
+import express from 'express'
+import http from 'http'
 //import socketio from 'socket.io'
 
 const app = express()
+const server = http.createServer(app)
+
+app.use(express.static('public'))
+
+
+
 app.get('/',(req, res) => {
     res.send('Hello world')
 })
 
 
 
-app.listen(3000, ()=>{
+server.listen(3000, ()=>{
     console.log('O server esta rodando na porta 3000')
 })

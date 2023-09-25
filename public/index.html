@@ -3,13 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestão de inventario</title>
+    <title>Inventário de Alimentos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
-    <script async src="cozinha.js"></script>
-    <div>
-        <input type="number" id="not">
-        <input type="button" value="botaoTeste" id="botaoTeste">
-    </div>
+    <header>
+        <h1>Inventário de Alimentos</h1>
+    </header>
+    <main>
+        <div class="container">
+            
+            <a href="add.html"><h2>Adicionar itens</h2></a>
+           
+        </div>
+        <div class="container">
+            <h2>Lista de Alimentos em tempo real</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome do Alimento</th>
+                        <th>Quantidade</th>
+        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Maçãs</td>
+                        <td>20</td>
+        
+                    </tr>
+                    <tr>
+                        <td>Arroz</td>
+                        <td>5 kg</td>
+        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <script async src="main.js"></script>
 </body>
 </html>
