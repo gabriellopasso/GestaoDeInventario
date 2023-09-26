@@ -2,19 +2,20 @@ const inventario = {
     pao: [],
     bolo: [],
     cookie: []
-} // usar função forEach
+} 
+// usar função forEach
 
 const item = document.getElementById('itens')
 item.addEventListener('change', escolha)
-const botao = document.getElementById('botaoTeste')
-botao.addEventListener('click', adicionar)
 
 function escolha (){
-    //console.log(item.value)
-    
     const opcao = item.value
     return  {opcao}
 }
+
+
+const botao = document.getElementById('botaoTeste')
+botao.addEventListener('click', adicionar)
 
 function adicionar(){
     const num = document.getElementById('quantidade')
@@ -34,12 +35,15 @@ function adicionar(){
             break
         default:
             window.alert('selecione uma opção valida de produto')
-    }
-    atualizarValor()   
+    } 
 }
 
 function atualizarValor(){
-    console.log(inventario.bolo[inventario.bolo.length - 1])
+    //console.log(inventario.bolo[inventario.bolo.length - 1])
+    const quantPao = getElementById('pao')
+    const quantBolo = getElementById('bolo')
+    const quantCookie = getElementById('cookie')
+    quantPao.innerHTML = `${inventario.pao[inventario.pao.length - 1]}`
+    quantBolo.innerHTML = `${inventario.bolo[inventario.bolo.length - 1]}`
+    quantCookie.innerHTML = `${inventario.cookie[inventario.cookie.length - 1]}`
 }
-
-

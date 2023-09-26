@@ -58,19 +58,29 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Maçãs</td>
-                        <td>20</td>
+                        <td>Pão</td>
+                        <td id="pao"></td>
         
                     </tr>
                     <tr>
-                        <td>Arroz</td>
-                        <td>5 kg</td>
-        
+                        <td>Bolo</td>
+                        <td id="bolo"></td>
+                    </tr>
+                    <tr>
+                        <td>Cookie</td>
+                        <td id="cookie"></td>
                     </tr>
                 </tbody>
             </table>
         </div>
+        <button id="test">teste</button>
     </main>
-    <script async src="main.js"></script>
+    <script type="module" src="main.js">
+        import atualizar from './main.js'
+        const att = atualizar
+
+        const teste = document.getElementById()
+        teste.addEventListener('click', att.atualizarValor)
+    </script>
 </body>
 </html>
