@@ -1,3 +1,51 @@
+const inventario = [
+    { item: "pao", quantidade: 0 },
+    { item: "bolo", quantidade: 0 },
+    { item: "cookie", quantidade: 0 },
+]
+const item = document.getElementById("itens")
+if (item) {
+    item.addEventListener("change", escolha)
+}
+
+function escolha() {
+    const opcao = item.value
+    return { opcao }
+}
+const botao = document.getElementById("botaoTeste")
+if (botao) {
+    botao.addEventListener("click", adicionar)
+}
+
+function adicionar() {
+    const num = document.getElementById("quantidade")
+    const num_value = num.valueAsNumber
+    //console.log(typeof num_value)
+    const escolhido = new escolha()
+    //console.log(escolhido)
+    
+    const listaDeQuantidade = inventario.map(q => q.quantidade)    
+    //console.log(listaDeQuantidade)
+    const somarQuantidade = (valorAnterior, valorAtual = num_value) => valorAnterior += valorAtual
+
+
+    switch (escolhido.opcao) {
+        case "pao":
+            return listaDeQuantidade[0].reduce(somarQuantidade)
+            break
+        case "bolo":
+            return listaDeQuantidade[1].reduce(somarQuantidade)
+            break
+        case "cookie":
+            return listaDeQuantidade[2].reduce(somarQuantidade)
+            break
+        default:
+            window.alert("selecione uma opção valida de produto")
+    }
+}
+
+export default{inventario}
+/*
 export default function main() {
     const inventario = {
         pao: [1],
@@ -12,7 +60,6 @@ export default function main() {
 
     function escolha() {
         const opcao = item.value
-        
         return { opcao }
     }
 
@@ -58,9 +105,8 @@ export default function main() {
         subscribe,
     }
 }
-function setMain(){
-    
-}
+
 const Main = new main() 
 export {Main as invent} 
 //console.log(Main)
+*/
